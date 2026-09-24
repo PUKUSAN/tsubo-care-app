@@ -60,6 +60,5 @@ how.textContent = `押し方：${data.how}`;
 
 card.classList.remove("hidden");    
       
-    );
   });
 });
