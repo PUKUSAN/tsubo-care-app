@@ -1,0 +1,58 @@
+const buttons = document.querySelectorAll(".symptom-list button");
+
+const tsuboData = {
+  "頭痛": {
+    name: "合谷（ごうこく）",
+    place: "手の甲側で、親指と人差し指の骨が交わる少し手前あたりです。",
+    how: "反対側の親指で、痛気持ちいい程度の強さで5秒ほど押し、ゆっくり離します。"
+  },
+
+  "肩こり": {
+    name: "肩井（けんせい）",
+    place: "首の付け根と肩先の、だいたい中間あたりです。",
+    how: "反対側の手で、無理のない強さでゆっくり押します。"
+  },
+
+  "腰痛": {
+    name: "委中（いちゅう）",
+    place: "ひざの裏側の、ほぼ中央にあります。",
+    how: "座った状態で、指の腹を使って軽く押してみてください。"
+  },
+
+  "目の疲れ": {
+    name: "睛明（せいめい）",
+    place: "目頭と鼻の付け根の間あたりです。",
+    how: "眼球を直接押さず、指の腹でやさしく押します。"
+  },
+
+  "胃の不快感": {
+    name: "足三里（あしさんり）",
+    place: "ひざのお皿の外側から、指4本分ほど下あたりです。",
+    how: "親指でゆっくりと、心地よい程度に押します。"
+  },
+
+  "寝つきが悪い": {
+    name: "神門（しんもん）",
+    place: "手首の小指側にあるくぼみ付近です。",
+    how: "反対側の親指で、ゆっくり優しく押します。"
+  }
+};
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const symptom = button.textContent.replace(/[^\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/gu, "").trim();
+
+    const data = tsuboData[symptom];
+
+    if (!data) {
+      alert("ツボ情報が見つかりませんでした。");
+      return;
+    }
+
+    alert(
+      `おすすめのツボ：${data.name}\n\n` +
+      `場所：${data.place}\n\n` +
+      `押し方：${data.how}`
+    );
+  });
+});
