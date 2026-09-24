@@ -49,10 +49,17 @@ buttons.forEach(button => {
       return;
     }
 
-    alert(
-      `おすすめのツボ：${data.name}\n\n` +
-      `場所：${data.place}\n\n` +
-      `押し方：${data.how}`
+const card = document.getElementById("tsubo-card");
+const name = document.getElementById("tsubo-name");
+const place = document.getElementById("tsubo-place");
+const how = document.getElementById("tsubo-how");
+
+name.textContent = `おすすめのツボ：${data.name}`;
+place.textContent = `場所：${data.place}`;
+how.textContent = `押し方：${data.how}`;
+
+card.classList.remove("hidden");    
+      
     );
   });
 });
