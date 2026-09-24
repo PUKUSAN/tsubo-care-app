@@ -59,3 +59,25 @@ main > p {
     grid-template-columns: 1fr;
   }
 }
+.tsubo-card {
+  margin-top: 30px;
+  padding: 24px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  line-height: 1.8;
+}
+
+.tsubo-card h2 {
+  margin-top: 0;
+  color: #2f6f62;
+  font-size: 22px;
+}
+
+.tsubo-card p {
+  margin: 12px 0;
+}
+
+.hidden {
+  display: none;
+}
