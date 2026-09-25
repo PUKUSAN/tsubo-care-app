@@ -9,12 +9,12 @@ const tsuboData = {
   },
 
   "肩こり": {
-  name: "肩井（けんせい）",
-  place: "首の付け根と肩先の、だいたい中間あたりです。",
-  how: "反対側の手で、無理のない強さでゆっくり押します。",
-  image: "kensei.png"
-},
-  
+    name: "肩井（けんせい）",
+    place: "首の付け根と肩先の、だいたい中間あたりです。",
+    how: "反対側の手で、無理のない強さでゆっくり押します。",
+    image: "kensei.png"
+  },
+
   "腰痛": {
     name: "委中（いちゅう）",
     place: "ひざの裏側の、ほぼ中央にあります。",
@@ -69,6 +69,7 @@ buttons.forEach(button => {
       image.style.display = "block";
     } else {
       image.style.display = "none";
+      image.removeAttribute("src");
     }
 
     card.classList.remove("hidden");
