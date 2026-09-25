@@ -4,7 +4,7 @@ const tsuboData = {
   "頭痛": {
     name: "合谷（ごうこく）",
     place: "手の甲側で、親指と人差し指の骨が交わる少し手前あたりです。",
-    how: "反対側の親指で、痛気持ちいい程度の強さで5秒ほど押し、ゆっくり離します。"
+    how: "反対側の親指で、痛気持ちいい程度の強さで5秒ほど押し、ゆっくり離します。",
     image: "goukoku.png"
   },
 
@@ -41,29 +41,34 @@ const tsuboData = {
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-    const symptom = button.textContent.replace(/[^\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/gu, "").trim();
+    const symptom = button.textContent
+      .replace(/[^\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/gu, "")
+      .trim();
 
     const data = tsuboData[symptom];
 
     if (!data) {
-      alert("ツボ情報が見つかりませんでした。");
       return;
     }
 
-const card = document.getElementById("tsubo-card");
-const name = document.getElementById("tsubo-name");
-const place = document.getElementById("tsubo-place");
-const how = document.getElementById("tsubo-how");
-const image = document.getElementById("tsubo-image");
+    const card = document.getElementById("tsubo-card");
+    const name = document.getElementById("tsubo-name");
+    const place = document.getElementById("tsubo-place");
+    const how = document.getElementById("tsubo-how");
+    const image = document.getElementById("tsubo-image");
 
-name.textContent = `おすすめのツボ：${data.name}`;
-place.textContent = `場所：${data.place}`;
-how.textContent = `押し方：${data.how}`;
+    name.textContent = `おすすめのツボ：${data.name}`;
+    place.textContent = `場所：${data.place}`;
+    how.textContent = `押し方：${data.how}`;
 
-image.src = data.image;
-image.alt = `${data.name}の位置`;
+    if (data.image) {
+      image.src = data.image;
+      image.alt = `${data.name}の位置`;
+      image.style.display = "block";
+    } else {
+      image.style.display = "none";
+    }
 
-card.classList.remove("hidden");    
-      
+    card.classList.remove("hidden");
   });
 });
