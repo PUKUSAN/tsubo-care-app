@@ -81,3 +81,12 @@ main > p {
 .hidden {
   display: none;
 }
+
+.tsubo-image {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 14px;
+}
