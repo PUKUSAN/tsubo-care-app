@@ -16,19 +16,18 @@ const tsuboData = {
   },
 
   "腰痛": {
-  name: "委中（いちゅう）",
-  place: "ひざの裏側の、ほぼ中央にあります。",
-  how: "座った状態で、指の腹を使って軽く押してみてください。",
-  image: "ichuu.png"
-},  
-  
+    name: "委中（いちゅう）",
+    place: "ひざの裏側の、ほぼ中央にあります。",
+    how: "座った状態で、指の腹を使って軽く押してみてください。",
+    image: "ichuu.png"
+  },
+
   "目の疲れ": {
-  name: "睛明（せいめい）",
-  place: "目頭と鼻の付け根の間あたりです。",
-  how: "眼球を直接押さず、指の腹でやさしく押します。",
-  image: "seimei.png"
-},  
-  
+    name: "睛明（せいめい）",
+    place: "目頭と鼻の付け根の間あたりです。",
+    how: "眼球を直接押さず、指の腹でやさしく押します。"
+  },
+
   "胃の不快感": {
     name: "足三里（あしさんり）",
     place: "ひざのお皿の外側から、指4本分ほど下あたりです。",
@@ -69,6 +68,10 @@ buttons.forEach(button => {
       image.alt = `${data.name}の位置`;
       image.style.display = "block";
     } else {
-      image.style.display = "none";
       image.removeAttribute("src");
+      image.style.display = "none";
     }
+
+    card.classList.remove("hidden");
+  });
+});
