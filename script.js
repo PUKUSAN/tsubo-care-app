@@ -23,11 +23,12 @@ const tsuboData = {
 },  
   
   "目の疲れ": {
-    name: "睛明（せいめい）",
-    place: "目頭と鼻の付け根の間あたりです。",
-    how: "眼球を直接押さず、指の腹でやさしく押します。"
-  },
-
+  name: "睛明（せいめい）",
+  place: "目頭と鼻の付け根の間あたりです。",
+  how: "眼球を直接押さず、指の腹でやさしく押します。",
+  image: "seimei.png"
+},  
+  
   "胃の不快感": {
     name: "足三里（あしさんり）",
     place: "ひざのお皿の外側から、指4本分ほど下あたりです。",
@@ -71,7 +72,3 @@ buttons.forEach(button => {
       image.style.display = "none";
       image.removeAttribute("src");
     }
-
-    card.classList.remove("hidden");
-  });
-});
